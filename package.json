@@ -1,0 +1,17 @@
+{
+  "name": "requisicoes-fontes-dados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "consulta-fonte-dados.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "base-64": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
