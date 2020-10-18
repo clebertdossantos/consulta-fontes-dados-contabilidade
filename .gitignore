@@ -1,0 +1,11 @@
+# ponto na frente do arquivo deixa ele oculto.. ls -a
+# arqTeste - ignora o arquivo (ou diretorio) arqTeste
+# *.log - ignora todos os arquivos com extensão .log
+# arq* - ignora todos os arquivos iniciados com arq
+# ?rq - ignora todos os arquivos não importando o primeiro caractere, mas que possua rq na sequência
+# dirTeste/ - ignora o diretório dirTeste e seus arquivos
+# **/dirTeste - ignora todos os diretóirios de nome dirTeste
+# !saída.log - NÃO ignora o arquivo saída.log isso porque o esclamação inverte o true para false
+
+node_modules/
+arqIgnoreTeste 
