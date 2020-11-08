@@ -21,7 +21,8 @@ function getConsultFontData(url) {
             url : url ,
             method: 'get',
             params: parametros,
-            headers : headers
+            headers : headers/*,
+            timeout : 20000 */
         }
         try{
             axios(fonteDadosConsulta)
@@ -36,16 +37,20 @@ function getConsultFontData(url) {
                     // console.log(fonteDados);
                 })
                 // .catch(err => imprimir({tipo : 'ERRO',url : url}))
-                .catch(err => console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`))
+                // .catch(err => console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`))
+                .catch(err => console.log(`[ERRO] -> ${url} => ${err}`))
         }catch(e){
-            console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`)
+            // console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`)
+            console.log(`[ERRO] -> ${url}`)
+            console.log(e)
         }
     });
 }
 
 for(it of fontesDados.temasFontesDados){
     getConsultFontData(it)
-        .then(resp => console.log(resp))
+        .then(resp => Buffer.from(resp))
+        // .then(resp => console.log(resp))
         .catch(err => console.log(err))
-    //break;
+    // break;
 }

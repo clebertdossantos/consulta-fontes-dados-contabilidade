@@ -31,8 +31,15 @@ axios(fonteDadosConsulta)
             "contabil" : {}
         }
         for(ln of it.ativos){
+            const regex = /fontes-adicionais/
+            if(ln.endereco.match(regex)){
+                console.log(ln)
+                break
+            }                
+            
             // console.log(ln)    
-            console.log(`"${ln.tema.replace('.','')}" : "${"https://contabilidade-fontes-dados.cloud.betha.com.br".concat(ln.endereco)}",`)
+            // console.log(`"${ln.tema.replace('.','')}" : "${"https://contabilidade-fontes-dados.cloud.betha.com.br".concat(ln.endereco)}",`)
+            // console.log(`try{ fonte = Dados.contabilidade.v1.${ln.tema}.busca(campos : "id",primeiro:true) ; imprimir "[SUCESSO] - ${ln.tema} >> ".concat(String.valueOf(fonte)) ; }catch(e){ imprimir "[ERRO] -  ${ln.tema}"}`)
             // Object.assign(obj.contabil, { this.attr(ln.tema): this.atln.endereco});        
             // obj.contabil.put(ln.tema,ln.endereco)
         }
