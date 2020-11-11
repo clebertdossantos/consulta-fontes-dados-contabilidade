@@ -30,17 +30,15 @@ function getConsultFontData(url) {
                     // console.log(resp);
                     if(resp.status == 200 || resp.status == 201){
                         resolve(imprimir({tipo : 'SUCESSO',url : url, conteudo : JSON.stringify(resp.data.content).substring(0,30)}))
+                        // resolve(imprimir({tipo : 'SUCESSO',url : url, conteudo : JSON.stringify(resp.data.content)}))
                     }else{
                         reject(imprimir({tipo : 'ERRO',url : url, conteudo : JSON.stringify(resp.data.content)}))
                     }
-                    // let fonteDados = resp.data.content;
-                    // console.log(fonteDados);
                 })
                 // .catch(err => imprimir({tipo : 'ERRO',url : url}))
                 // .catch(err => console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`))
                 .catch(err => console.log(`[ERRO] -> ${url} => ${err}`))
         }catch(e){
-            // console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`)
             console.log(`[ERRO] -> ${url}`)
             console.log(e)
         }
@@ -49,8 +47,8 @@ function getConsultFontData(url) {
 
 for(it of fontesDados.temasFontesDados){
     getConsultFontData(it)
-        .then(resp => Buffer.from(resp))
-        // .then(resp => console.log(resp))
+        // .then(resp => Buffer.from(resp))
+        .then(resp => console.log(resp))
         .catch(err => console.log(err))
     // break;
 }

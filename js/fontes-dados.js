@@ -430,21 +430,12 @@ exports.Dados = {
 }
 
 exports.temasFontesDadosTeste = [
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-recurso",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-receita",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/integracao-dados",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/receitas-natureza",
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/contas-bancarias-credores",
     "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-despesa",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/despesas-natureza",
     "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-disponibilidade",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/planejamento/ldo-receitas-consolidadas",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/planejamento/ldo-despesas-consolidadas",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/planejamento/loa-receitas-consolidadas",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/planejamento/ppa-despesas-consolidadas",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/planejamento/ppa-receitas-consolidadas",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/planejamento/loa-despesas-consolidadas",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/movimentacoes-gestoes-bancarias"
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/movimentacoes-gestoes-bancarias",
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios",
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-recurso"
 ]
 
 exports.temasFontesDados = [
