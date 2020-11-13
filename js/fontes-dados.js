@@ -6,7 +6,8 @@ exports.entidades = {
     "lages"  : "8hEwfhNBOF4=",
     "riodasflores" :  "lT5-F9TDP5s=",
     "mandirituba" : "1Smx2QtX7wQ=",
-    "tabai" : "YyrOxAgSV2E="
+    "tabai" : "YyrOxAgSV2E=",
+    "diretoriadeprodutos" : "4Gy_TZ9cx154aA2WTMMXVl1QClJQDtk9IHxz3gwV4Co="
 }
 
 exports.Dados = {
