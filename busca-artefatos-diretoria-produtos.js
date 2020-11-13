@@ -2,7 +2,7 @@ const axios = require('axios');
 const fontesDados = require("./js/fontes-dados")
 const headers = {
     //'app-context' : base64.encode(exercicio),
-    'authorization' : "Bearer eb1097e3-5973-4917-9db1-df1573ffb3da",
+    'authorization' : "Bearer e95e4a7f-ff8c-404d-af89-55eb54d96768",
     'user-access': fontesDados.entidades.diretoriadeprodutos
 }
 const parametros = {
@@ -14,7 +14,7 @@ const imprimir = (param) => `[${param.tipo}] -> ${param.url.split('/')[param.url
 
 function getConsultFontData(url) {
     return new Promise((resolve,reject) => {
-        for(pag of [100,200,300,400]){
+        for(pag of [100,200,300,400,500,600]){
             try{
                 parametros.limit = pag 
                 parametros.offset = (pag - 100)
@@ -38,10 +38,9 @@ function getConsultFontData(url) {
                                 .then(aux => {
                                     let identificador = url.split('/')
                                     identificador = identificador[identificador.length -1]
-                                    // if()
-                                    // console.log(aux.data.revisao.codigoFonte)
-                                    let n = aux.data.revisao.codigoFonte.search(/Dados.contabilidade.v1.movimentacaoContabilEmpenho/);
-                                    if(n != -1){
+                                    let ok = aux.data.revisao.codigoFonte.search(/Dados.contabilidade.v1.movimentacaoBalanceteMensalDespesa/)
+                                    let not = aux.data.titulo.search(/Descontinuado|desk|DEMO/)
+                                    if(ok != -1 && not === -1){
                                         console.log(`${identificador} >> ${aux.data.titulo}`)
                                     }
                                     // console.log(aux.data.titulo)
@@ -61,7 +60,8 @@ function getConsultFontData(url) {
 
 for(it of [
     // "https://plataforma-scripts.betha.cloud/scripts/v1/api/scripts",
-    "https://plataforma-scripts.betha.cloud/scripts/v1/api/fontes-dinamicas",
+    // "https://plataforma-scripts.betha.cloud/scripts/v1/api/fontes-dinamicas",
+    "https://plataforma-scripts.betha.cloud/scripts/v1/api/componentes",
 ]){
     getConsultFontData(it)
         // .then(resp => Buffer.from(resp))
