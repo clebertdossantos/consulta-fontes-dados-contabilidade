@@ -9,7 +9,7 @@ const headers = {
     'user-access': fontesDados.entidades.cocaldosul
 }
 const parametros = {
-    "limit" : 1, // podemos jogar uma paginação de até 10000
+    "limit" : 500, // podemos jogar uma paginação de até 10000
     "offset" : 0
 }
 

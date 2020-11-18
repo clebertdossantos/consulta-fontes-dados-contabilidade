@@ -1,8 +1,9 @@
 const axios = require('axios');
 const fontesDados = require("./js/fontes-dados")
+const fs= require('fs')
 const headers = {
     //'app-context' : base64.encode(exercicio),
-    'authorization' : "Bearer e95e4a7f-ff8c-404d-af89-55eb54d96768",
+    'authorization' : "Bearer 86739585-5997-42fd-b7ac-4d7fa642cfa7",
     'user-access': fontesDados.entidades.diretoriadeprodutos
 }
 const parametros = {
@@ -14,7 +15,7 @@ const imprimir = (param) => `[${param.tipo}] -> ${param.url.split('/')[param.url
 
 function getConsultFontData(url) {
     return new Promise((resolve,reject) => {
-        for(pag of [100,200,300,400,500,600]){
+        for(pag of [100,200,300,400]){
             try{
                 parametros.limit = pag 
                 parametros.offset = (pag - 100)
@@ -26,7 +27,8 @@ function getConsultFontData(url) {
                 }
                 axios(fonteDadosConsulta)
                     .then(resp => {
-                        // console.log(resp.data.content);
+                        // console.log(resp.data);
+                        // console.log(`offset : ${resp.data.offset} | limit : ${resp.data.limit} | total : ${resp.data.total} `);
                         for (const iterator of resp.data.content) {
                             // console.log(iterator.id)
                             axios({
@@ -38,15 +40,19 @@ function getConsultFontData(url) {
                                 .then(aux => {
                                     let identificador = url.split('/')
                                     identificador = identificador[identificador.length -1]
-                                    let ok = aux.data.revisao.codigoFonte.search(/Dados.contabilidade.v1.movimentacaoBalanceteMensalDespesa/)
+                                    let ok = aux.data.revisao.codigoFonte.search(/movimentacaoBalanceteMensalDespesa/)
                                     let not = aux.data.titulo.search(/Descontinuado|desk|DEMO/)
                                     if(ok != -1 && not === -1){
-                                        console.log(`${identificador} >> ${aux.data.titulo}`)
+                                        console.log(aux.data.titulo)
+                                        console.log(__dirname + `/file-busca-artefatos/${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy`)
+                                        fs.writeFileSync(__dirname + `/file-busca-artefatos/${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy` , aux.data.revisao.codigoFonte.toString())
                                     }
-                                    // console.log(aux.data.titulo)
+                                    // if(aux.data.titulo === 'Fonte Dinâmica - Anexo 14 - Balanço Patrimonial'){
+                                    //     console.log(__dirname + `/file-busca-artefatos/${aux.data.titulo}.groovy`)
+                                    //     fs.writeFileSync(__dirname + `/file-busca-artefatos/${aux.data.titulo}.groovy` , aux.data.revisao.codigoFonte)
+                                    // }
                                 })
                                 .catch(err => console.log(err))
-                            // break
                         }
                     })
                     .catch(err => console.log(`[ERRO] -> ${url} => ${err}`))
@@ -58,14 +64,20 @@ function getConsultFontData(url) {
     });
 }
 
+try{
+    fs.mkdirSync('./file-busca-artefatos')
+}catch(e){
+    console.log('[AVISO] >> Pasta já existe!!!')
+}
+
 for(it of [
-    // "https://plataforma-scripts.betha.cloud/scripts/v1/api/scripts",
-    // "https://plataforma-scripts.betha.cloud/scripts/v1/api/fontes-dinamicas",
     "https://plataforma-scripts.betha.cloud/scripts/v1/api/componentes",
+    "https://plataforma-scripts.betha.cloud/scripts/v1/api/fontes-dinamicas",
+    "https://plataforma-scripts.betha.cloud/scripts/v1/api/scripts",
 ]){
     getConsultFontData(it)
         // .then(resp => Buffer.from(resp))
         .then(resp => console.log(resp))
         .catch(err => console.log(err))
-    //  break;
+    // break;
 }

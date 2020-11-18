@@ -7,7 +7,8 @@ exports.entidades = {
     "riodasflores" :  "lT5-F9TDP5s=",
     "mandirituba" : "1Smx2QtX7wQ=",
     "tabai" : "YyrOxAgSV2E=",
-    "diretoriadeprodutos" : "4Gy_TZ9cx154aA2WTMMXVl1QClJQDtk9IHxz3gwV4Co="
+    "diretoriadeprodutos" : "4Gy_TZ9cx154aA2WTMMXVl1QClJQDtk9IHxz3gwV4Co=",
+    "paranavai" : "9zgGkLh5RDvajqQby2qHJ0gMVu5s46eV"
 }
 
 exports.Dados = {
@@ -436,7 +437,8 @@ exports.temasFontesDadosTeste = [
     "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-disponibilidade",
     "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/movimentacoes-gestoes-bancarias",
     "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-recurso"
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-recurso",
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios"
 ]
 
 exports.temasFontesDados = [

@@ -8,8 +8,9 @@ const base64 = require('base-64')
 const exercicio = "{\"exercicio\":2020}";
 const headers = {
     'app-context' : base64.encode(exercicio),
-    'authorization' : fontesDados.token,
-    'user-access': fontesDados.entidades.tabai
+    // 'authorization' : fontesDados.token,
+    'authorization' : "Bearer 7a56ec5b-6f15-41ad-bb60-79c44272edbf",
+    'user-access': fontesDados.entidades.paranavai
 }
 const parametros = {
     "limit" : 1, // podemos jogar uma paginação de até 10000
@@ -18,7 +19,7 @@ const parametros = {
     "fields" : ""*/
 }
 const fonteDadosConsulta = {
-    url : "https://plataforma-relatorios.betha.cloud/relatorios/v1/api/rascunhos/453289/componentes/685554/colunas" ,
+    url : "https://plataforma-relatorios.betha.cloud/relatorios/v1/api/rascunhos/454679/componentes/687630/colunas" ,
     method: 'get',
     params: parametros,
     headers : headers/*,
@@ -31,8 +32,7 @@ try{
                 console.log(it.nome)
             }
         })
-
-        .catch(err => console.log(`[ERRO] -> ${url} => ${err}`))
+        .catch(err => console.log(`[ERRO] -> ${err}`))
 }catch(e){
     // console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`)
     console.log(`[ERRO] -> ${url}`)
