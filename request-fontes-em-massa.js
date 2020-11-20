@@ -7,9 +7,9 @@ const headers = {
     'app-context' : base64.encode(exercicio),
     'authorization' : fontesDados.token,
     'user-access': fontesDados.entidades.cocaldosul
-}
+}   
 const parametros = {
-    "limit" : 500, // podemos jogar uma paginação de até 10000
+    "limit" : 1, // podemos jogar uma paginação de até 10000
     "offset" : 0
 }
 

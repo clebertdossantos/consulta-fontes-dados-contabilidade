@@ -18,9 +18,11 @@ console.log((nome.replace('/',' - ')).replace('/',' - '))
 // })
 
 
+console.log(__dirname);
 
-const { spawn } = require("child_process");
-console.log(spawn);
+
+// const { spawn } = require("child_process");
+// console.log(spawn);
 
 // const { argv } = require('process');
 // console.log(cp);

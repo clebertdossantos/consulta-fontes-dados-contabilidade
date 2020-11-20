@@ -3,18 +3,18 @@ const fontesDados = require("./js/fontes-dados")
 const axios = require('axios');
 const base64 = require('base-64')
 const exercicio = "{\"exercicio\":2020}";
-const url = fontesDados.Dados.v1.contabil.empenhosIdentificadoresAdiantamentos;
+const url = fontesDados.Dados.v1.contabil.movimentacaoBalanceteMensalDespesa;
 const headers = {
     'app-context' : base64.encode(exercicio),
     'authorization' : fontesDados.token,
-    'user-access': fontesDados.entidades.lages
+    'user-access': fontesDados.entidades.cocaldosul
 };
 // let fields = "banco(numeroBanco,id),"
 // fields += "agencia(id,nome,numeroAgencia)"
 const parametros = {
     // "fields" : "id,exercicio(ano),entidade(nome,id),numeroCadastro.numero,valor,data",
-    "filter" : "exercicio.ano = 2020",
-    "limit" : 1000, // podemos jogar uma paginação de até 10000
+    "filter" : "exercicio.ano = 2020 and entidade.id = 1040",
+    "limit" : 1, // podemos jogar uma paginação de até 10000
     "offset" : 0
 };
 const fonteDadosConsulta = {

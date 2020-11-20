@@ -3,7 +3,7 @@ const fontesDados = require("./js/fontes-dados")
 const fs= require('fs')
 const headers = {
     //'app-context' : base64.encode(exercicio),
-    'authorization' : "Bearer 86739585-5997-42fd-b7ac-4d7fa642cfa7",
+    'authorization' : "Bearer 21be9b93-1712-47c0-9378-fb30caa1f624",
     'user-access': fontesDados.entidades.diretoriadeprodutos
 }
 const parametros = {
@@ -40,12 +40,12 @@ function getConsultFontData(url) {
                                 .then(aux => {
                                     let identificador = url.split('/')
                                     identificador = identificador[identificador.length -1]
-                                    let ok = aux.data.revisao.codigoFonte.search(/movimentacaoBalanceteMensalDespesa/)
+                                    let ok = aux.data.revisao.codigoFonte.search(/6221304/)
                                     let not = aux.data.titulo.search(/Descontinuado|desk|DEMO/)
                                     if(ok != -1 && not === -1){
                                         console.log(aux.data.titulo)
-                                        console.log(__dirname + `/file-busca-artefatos/${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy`)
-                                        fs.writeFileSync(__dirname + `/file-busca-artefatos/${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy` , aux.data.revisao.codigoFonte.toString())
+                                        // console.log(__dirname + `/file-busca-artefatos/${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy`)
+                                        fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy` , aux.data.revisao.codigoFonte.toString())
                                     }
                                     // if(aux.data.titulo === 'Fonte Dinâmica - Anexo 14 - Balanço Patrimonial'){
                                     //     console.log(__dirname + `/file-busca-artefatos/${aux.data.titulo}.groovy`)

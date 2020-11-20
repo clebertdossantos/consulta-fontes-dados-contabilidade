@@ -432,13 +432,15 @@ exports.Dados = {
 }
 
 exports.temasFontesDadosTeste = [
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/contas-bancarias-credores",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-despesa",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-disponibilidade",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/movimentacoes-gestoes-bancarias",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-recurso",
-    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios"
+    // "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/contas-bancarias-credores",
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/planejamento/loa-despesas",
+    "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-receita",
+    // "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-despesa",
+    // "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-disponibilidade",
+    // "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/movimentacoes-gestoes-bancarias",
+    // "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios",
+    // "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/movimentacoes/balancete-mensal-recurso",
+    // "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/tesouraria/dados-extratos-bancarios"
 ]
 
 exports.temasFontesDados = [
