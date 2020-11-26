@@ -1,4 +1,5 @@
-exports.token = "Bearer d5265abe-ca3f-43b5-8eea-85ca00f84739"
+exports.tokenSistemas = "Bearer d5265abe-ca3f-43b5-8eea-85ca00f84739"
+exports.tokenSuite = "Bearer 5c80f1d7-77dd-45a0-af35-44bbab348a62"
 
 exports.entidades = {
     "jaraguadosul" : "TS75BnocQHY=",
