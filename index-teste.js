@@ -1,7 +1,7 @@
-const {} = require('')
-
-const nome = "Componente - RREO 2019/ Anexo 2 - Demonstrativo da Execução das Despesas por Função/Subfunção.groovy"
-console.log((nome.replace('/',' - ')).replace('/',' - '))
+// const nome = "Componente - RREO 2019/ Anexo 2 - Demonstrativo da Execução das Despesas por Função/Subfunção.groovy"
+const nome = "https://contabilidade-fontes-dados.cloud.betha.com.br/contabilidade/fontes-dados/contabil/recursos"
+console.log(nome.split('/'))
+//Array.prototype.
 
 
 // const {spawn} = require('child_process')

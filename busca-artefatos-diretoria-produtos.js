@@ -3,13 +3,17 @@ const fontesDados = require("./js/fontes-dados")
 const fs= require('fs')
 const headers = {
     //'app-context' : base64.encode(exercicio),
-    'authorization' : "Bearer 21be9b93-1712-47c0-9378-fb30caa1f624",
+    'authorization' : fontesDados.tokenSuite,
     'user-access': fontesDados.entidades.diretoriadeprodutos
 }
 const parametros = {
     "limit" : 100, // podemos jogar uma paginação de até 10000
     "offset" : 0
 }
+
+const regex = /SC-2020/
+const get = "TITULO";
+// const get = "CODIGO";
 
 const imprimir = (param) => `[${param.tipo}] -> ${param.url.split('/')[param.url.split('/').length -1]} => ${param.conteudo}`
 
@@ -40,7 +44,12 @@ function getConsultFontData(url) {
                                 .then(aux => {
                                     let identificador = url.split('/')
                                     identificador = identificador[identificador.length -1]
-                                    let ok = aux.data.revisao.codigoFonte.search(/6221304/)
+                                    let ok = -1
+                                    if(get === "CODIGO"){
+                                        ok = aux.data.revisao.codigoFonte.search(regex)
+                                    }else{
+                                        ok = aux.data.titulo.search(regex)
+                                    }
                                     let not = aux.data.titulo.search(/Descontinuado|desk|DEMO/)
                                     if(ok != -1 && not === -1){
                                         console.log(aux.data.titulo)
