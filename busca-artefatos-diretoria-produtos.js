@@ -3,7 +3,7 @@ const fontesDados = require("./js/fontes-dados")
 const fs= require('fs')
 
 const parametros_execucao = {
-    "regex" : "CODIGO", // TITULO,TAG,CODIGO
+    "regex" : "TAG", // TITULO,TAG,CODIGO
     "tagId" : 118670,
     "regexCodigo" : /movimentacaoBalanceteMensalDespesa/,
     "regexTitulo" : /SC-2020/
@@ -93,16 +93,27 @@ for(it of [
 ]){
     let newIt = it
     if(parametros_execucao.regex === "TAG"){
+        let array = it.split('/')
         newIt = []
-        for(i of it.split('/')){
-            newIt.push(i)
-            if(i === "api"){
-                newIt.push('tags')
-                newIt.push(parametros_execucao.tagId)
+        for(i of array){
+            if(array[array.length -1] === "scripts"){
+                newIt.push(i)
+                if(i === "api"){
+                    newIt.push('tags')
+                    newIt.push(parametros_execucao.tagId)
+                }
+            }else{
+                newIt.push(i)
+                if(i === "componentes" || i === "fontes-dinamicas"){
+                    newIt.push('tags')
+                    newIt.push(parametros_execucao.tagId)
+                    newIt.push('scripts')
+                }
             }
         }
         newIt = newIt.join('/')
     }
+    console.log(newIt)
     getConsultFontData(newIt)
         // .then(resp => Buffer.from(resp))
         .then(resp => console.log(resp))
