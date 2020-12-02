@@ -26,7 +26,7 @@ function getConsultFontData(url) {
     return new Promise((resolve,reject) => {
         for(pag of [100,200,300,400]){
             try{
-                parametros.limit = pag 
+                parametros.limit = 100 
                 parametros.offset = (pag - 100)
                 const fonteDadosConsulta = {
                     url : url ,
@@ -34,11 +34,9 @@ function getConsultFontData(url) {
                     params: parametros,
                     headers : headers
                 }
-                console.log(fonteDadosConsulta)
                 axios(fonteDadosConsulta)
                     .then(resp => {
                         for (const iterator of resp.data.content) {
-                            // console.log(iterator.id)
                             axios({
                                 url : "https://plataforma-scripts.betha.cloud/scripts/v1/api/scripts/".concat(iterator.id),
                                 method: 'get',
@@ -85,7 +83,7 @@ function getConsultFontData(url) {
 try{
     fs.mkdirSync('./file-busca-artefatos')
 }catch(e){
-    console.log('[AVISO] >> Pasta já existe!!!')
+    // console.log('[AVISO] >> Pasta já existe!!!')
 }
 
 for(it of [
@@ -109,5 +107,4 @@ for(it of [
         // .then(resp => Buffer.from(resp))
         .then(resp => console.log(resp))
         .catch(err => console.log(err))
-    break;
 }
