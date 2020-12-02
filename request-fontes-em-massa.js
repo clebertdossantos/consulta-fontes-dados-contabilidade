@@ -5,7 +5,7 @@ const base64 = require('base-64')
 const exercicio = "{\"exercicio\":2020}";
 const headers = {
     'app-context' : base64.encode(exercicio),
-    'authorization' : fontesDados.token,
+    'authorization' : fontesDados.tokenSistemas,
     'user-access': fontesDados.entidades.cocaldosul
 }   
 const parametros = {
