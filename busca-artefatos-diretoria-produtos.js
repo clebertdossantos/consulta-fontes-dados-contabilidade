@@ -4,7 +4,7 @@ const fs= require('fs')
 
 const parametros_execucao = {
     "regex" : "TAG", // TITULO,TAG,CODIGO
-    "tagId" : 118670,
+    "tagId" : 118828,
     "regexCodigo" : /movimentacaoBalanceteMensalDespesa/,
     "regexTitulo" : /SC-2020/
 }
@@ -57,7 +57,7 @@ function getConsultFontData(url) {
                                             break;
                                         case "TAG":
                                             console.log(aux.data.titulo)
-                                            fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy` , aux.data.revisao.codigoFonte.toString())
+                                            fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ').replace(':','-')}.groovy` , aux.data.revisao.codigoFonte.toString())
                                             break;
                                         default:
                                             console.log("[ERRO] -> Não teve como cair nas condições do switch");
@@ -65,7 +65,7 @@ function getConsultFontData(url) {
                                     }
                                     if(ok != -1 && not === -1){
                                         console.log(aux.data.titulo)
-                                        fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ')}.groovy` , aux.data.revisao.codigoFonte.toString())
+                                        fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ').replace(':','')}.groovy` , aux.data.revisao.codigoFonte.toString())
                                     }
                                 })
                                 .catch(err => console.log(err))

@@ -1,0 +1,58 @@
+-- Atividades Diárias
+
+-- Inicio nas entididades do PR
+Contas correntes que não deveriam existir 
+419	701	1134101030000000000000002	RESPONSÁVEIS POR DIFERENÇAS EM C/C BANCÁRIA A APURAR	SIM-AM	Credor	43493238991
+419	701	1134101030000000000000002	RESPONSÁVEIS POR DIFERENÇAS EM C/C BANCÁRIA A APURAR	SIM-AM	Destinação de recurso	0000010000001070000
+77	71	1131199010000000000000001	OUTROS ADIANTAMENTOS CONCEDIDOS	SICONFI	4-Financeiro por fonte	P	10010000
+77	71	1131199010000000000000001	OUTROS ADIANTAMENTOS CONCEDIDOS	SICONFI	4-Financeiro por fonte	P	10900000
+77	71	1131199010000000000000001	OUTROS ADIANTAMENTOS CONCEDIDOS	SICONFI	4-Financeiro por fonte	P	11110000
+77	71	1131199010000000000000001	OUTROS ADIANTAMENTOS CONCEDIDOS	SICONFI	4-Financeiro por fonte	P	13110000
+77	71	1131199010000000000000001	OUTROS ADIANTAMENTOS CONCEDIDOS	SICONFI	4-Financeiro por fonte	P	16300000
+77	71	1131199010000000000000001	OUTROS ADIANTAMENTOS CONCEDIDOS	SICONFI	4-Financeiro por fonte	P	
+
+=> Encerramento x Inicio
+[] -> Verificar os erros das Orquestações (Urgente!)
+
+
+
+
+-- Resumo das Orquestações
+
+=> SC
+{ "id" : 32, "entidades" : [310,305,2837]},	
+{ "id" : 33, "entidades" : [5144,2109,2116,2112]},	
+{ "id" : 70, "entidades" : [1877]},	
+{ "id" : 211, "entidades" : [2758,320]},	
+{ "id" : 285, "entidades" : [2782]},	
+{ "id" : 332, "entidades" : [1838,1837,1834,1835]},	
+{ "id" : 446, "entidades" : [753,4199]},	
+{ "id" : 530, "entidades" : [943]},	
+{ "id" : 539, "entidades" : [956]},	
+{ "id" : 689, "entidades" : [2613,1197]},	
+{ "id" : 700, "entidades" : [2260,1235,1236]},	
+{ "id" : 716, "entidades" : [2182]},	
+{ "id" : 860, "entidades" : [2561]},	
+{ "id" : 865, "entidades" : [1370]},	
+{ "id" : 1312, "entidades" : [3569]},	
+{ "id" : 5698, "entidades" : [715,708]},		
+
+
+=> PR 
+{ "id" : 3343, "entidades" : [3344]},
+{ "id" : 5203, "entidades" : [5300]}
+
+=> RS
+{ "id" : 5332, "entidades" : [5443]},	ERRO ABERTURA
+
+=> RJ 
+{ "id" : 5341, "entidades" : [5495,5496]},	ERRO ABERTURA
+
+=> BA -> ok
+=> ES -> ok
+=> MG -> ok
+=> MT -> ok
+
+
+
+

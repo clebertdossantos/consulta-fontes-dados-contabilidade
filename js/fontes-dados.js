@@ -1,5 +1,14 @@
 exports.tokenSistemas = "Bearer d5265abe-ca3f-43b5-8eea-85ca00f84739"
 exports.tokenSuite = "Bearer 5c80f1d7-77dd-45a0-af35-44bbab348a62"
+exports.tokenTesteSuite = "Bearer 6ee67552-6946-407a-8a1d-6f067f81514a"
+
+exports.entidadesTeste = {
+    "CTBetha" : "R6zLEQoqJeMrByGcvLnRepiXWhb4LJxQ",
+    "lajegadoGrandeClau" : "nHD2kUAmCVRsJ5tRvCQSbYKbF1NsGBFR8JTZIHXCWVI=",
+    "assistenciaLajeado" : "ED34ilg8u8Q0nPOng2dO4A==",
+    "saudeLajeado" : "suGLKfVnGU3TskaZqCLHPA==",
+    "camaraLajeado" : "",
+}
 
 exports.entidades = {
     "jaraguadosul" : "TS75BnocQHY=",

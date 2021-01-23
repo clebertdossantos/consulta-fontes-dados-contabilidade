@@ -5,7 +5,8 @@
   "main": "consulta-fonte-dados.js",
   "dependencies": {
     "axios": "^0.20.0",
-    "base-64": "^0.1.0"
+    "base-64": "^0.1.0",
+    "child_process": "^1.0.2"
   },
   "devDependencies": {},
   "scripts": {
