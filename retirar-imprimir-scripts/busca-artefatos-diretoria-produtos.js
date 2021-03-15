@@ -1,10 +1,10 @@
 const axios = require('axios');
-const fontesDados = require("./js/fontes-dados")
+const fontesDados = require("../js/fontes-dados")
 const fs= require('fs')
 
 const parametros_execucao = {
     "regex" : "TAG", // TITULO,TAG,CODIGO
-    "tagId" : 17967,
+    "tagId" : 119375,
     "regexCodigo" : /movimentacaoBalanceteMensalDespesa/,
     "regexTitulo" : /SC-2020/
 }
@@ -57,7 +57,7 @@ function getConsultFontData(url) {
                                             break;
                                         case "TAG":
                                             console.log(aux.data.titulo)
-                                            fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ').replace(':','-').substring(0,170)}.groovy` , aux.data.revisao.codigoFonte.toString())
+                                            fs.writeFileSync(__dirname + `/artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ').replace(':','-')}.groovy` , aux.data.revisao.codigoFonte.toString())
                                             break;
                                         default:
                                             console.log("[ERRO] -> Não teve como cair nas condições do switch");

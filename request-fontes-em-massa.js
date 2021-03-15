@@ -38,7 +38,7 @@ function getConsultFontData(url) {
                 // .catch(err => imprimir({tipo : 'ERRO',url : url}))
                 // .catch(err => console.log(`[ERRO] -> ${url.split('/')[url.split('/').length -1]}`))
                 .catch(err => console.log(`[ERRO] -> ${url} => ${err}`))
-        }catch(e){
+        }catch(e){  
             console.log(`[ERRO] -> ${url}`)
             console.log(e)
         }

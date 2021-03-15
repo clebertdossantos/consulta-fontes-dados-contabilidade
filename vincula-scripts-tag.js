@@ -6,8 +6,8 @@ const { resolve } = require('path');
 const { DefaultSerializer } = require('v8');
 
 const headers = {
-    'authorization' : fontesDados.tokenSuite,
-    'user-access': 'EHxJ4kJrcb0CY6Y3zCROwPPEdk_RgPue'
+    'authorization' :'Bearer ee87e5f8-abd3-41b1-a76d-7797675bf1df' ,
+    'user-access': '0QIQRCvVf4PztKZD2T8oebhWj631__Q6mg78zJoDTdI='
 }
 
 let obj = {
