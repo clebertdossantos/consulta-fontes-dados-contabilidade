@@ -4,7 +4,7 @@ const fs= require('fs')
 
 const parametros_execucao = {
     "regex" : "TAG", // TITULO,TAG,CODIGO
-    "tagId" : 17967,
+    "tagId" : 17789,
     "regexCodigo" : /movimentacaoBalanceteMensalDespesa/,
     "regexTitulo" : /SC-2020/
 }

@@ -8,5 +8,8 @@
 # !saída.log - NÃO ignora o arquivo saída.log isso porque o esclamação inverte o true para false
 
 node_modules/
+rotina-siope/
+file-busca-artefatos/
+file/
 arqIgnoreTeste 
 --Atividades Diárias
