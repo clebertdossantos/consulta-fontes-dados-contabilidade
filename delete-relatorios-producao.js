@@ -2,47 +2,94 @@ const axios = require('axios');
 const fontesDados = require("./js/fontes-dados")
 const fs= require('fs')
 
-const parametros_execucao = {
-    "regex" : "TAG",
-    "acao" : "COPIAR",
-    "tagId" : 118828
-}
-
 const headers = {
-    // 'authorization' : fontesDados.tokenSuite,
-    // 'user-access': fontesDados.entidades.diretoriadeprodutos
-    'authorization': 'Bearer 5af9859e-34f1-46df-8152-7cd4c174947c',
-    'user-access': 'uXolOl8tV6LDRqQIrxQR5q2clsLj0uOI'
-}
-const parametros = {
-    "limit" : 100, // podemos jogar uma paginação de até 10000
-    "offset" : 0
+    'app-context' : 'eyJleGVyY2ljaW8iOjIwMTh9',
+    'authorization' : 'Bearer 4db29d34-d737-4d4f-8881-0d6d5774c1cd',
+    'user-access': 'XE7RmJRhDkcwsMxnWEjONQ=='
 }
 
-const fonteDadosConsulta = {
-    url : "https://plataforma-relatorios.betha.cloud/relatorios/v1/api/relatorios?filter=(titulo+like+%22%2525con-%2525%22)&limit=20&offset=0",
-    method: 'get',
-    // params: parametros,
-    headers : headers
-}
-axios(fonteDadosConsulta)
-    .then(resp => {
-        console.log(resp)
-        // for (const iterator of resp.data.content) {
-        for (const iterator of [
-            220444
-        ]) {
-            axios({
-                // url : `https://plataforma-relatorios.betha.cloud/relatorios/v1/api/relatorios/${iterator.id}`,
-                url : `https://plataforma-relatorios.betha.cloud/relatorios/v1/api/relatorios/${iterator}`,
-                method: 'delete',
-                headers : headers
-            })
-            // .then(aux => console.log(`[SUCESSO] -> Exclusão do script : ${iterator.titulo}`))
-            .then(aux => console.log(`[SUCESSO] -> Exclusão do script : ${iterator}`))
-            .catch(err => console.log(err))
-        }
-    })
-    .catch(err => console.log(err))
+const URL_BASE = "https://contabilidade.cloud.betha.com.br/contabilidade/api/contabil/empenhos"
 
+const DELETE_REG = async (params) => {
+    const param_request = {
+        url : `${params.api}/${params.id}` ,
+        method: 'delete',
+        headers : headers
+    }
     
+    try {
+        console.log(param_request);
+        result = await axios(param_request)
+        console.log(`[SUCESSO] - ${param_request.url}`)
+        
+    } catch (error) {
+        console.log(`[ERRO] - ${param_request.url}`)
+        console.log(error.config)
+    }
+}
+
+
+
+(async () => {
+    const ids = [
+        1333806,
+        261496,
+        206420,
+        195969,
+        185805,
+        169084,
+        156062,
+        156061,
+        153679,
+        153528,
+        144091,
+        126106,
+        125438,
+        125198,
+        125197,
+        115253,
+        115235,
+        115100,
+        111996,
+        84599,
+        84598,
+        84601,
+        84597,
+        84595,
+        84593,
+        84556,
+        84592,
+        84555,
+        84554,
+        84553,
+        84541,
+        77015,
+        77014,
+        77013,
+        59173,
+        59171,
+        59165,
+        51687,
+        84594,
+        84540,
+        254576,
+        74872,
+        308646,
+        76487,
+        111864,
+        111860,
+        59164,
+        111366,
+        145292,
+        111305,
+        51899,
+        51642
+      ]
+    for (let index = 0; index < ids.length ; index++) {
+        await DELETE_REG({
+            "api" : URL_BASE ,
+            "id" : ids[index]
+        })
+        break;
+    }
+})();

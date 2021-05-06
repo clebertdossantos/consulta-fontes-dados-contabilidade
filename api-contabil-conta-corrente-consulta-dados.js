@@ -14,7 +14,7 @@ const parametros = {
     "offset" : 0
 }
 
-const API_CONTABIL = "https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/saldos-iniciais-itens/305768/contas-correntes/SU5GT1JNQURPfDE0MDMyMzl8MTU4NDkw/itens"
+const API_CONTABIL = "https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/saldos-iniciais-itens/305768/contas-correntes/SU5GT1JNQURPfDE0MDMyMzh8MTU4NDg0/itens"
 
 async function getConsultFontData(url) {
     //return new Promise((resolve,reject) => {
@@ -26,19 +26,10 @@ async function getConsultFontData(url) {
         }
         try{
             const result = await axios(fonteDadosConsulta)
-            console.log(parametros)
+            // console.log(parametros)
             for(it of result.data.content){
-                // console.log(JSON.stringify(it))
+                console.log(`${it.componentes[1].valor}|${it.componentes[2].valor}|${it.valor}`)
                 // console.log(it.contaContabil.mascara,' >> ',it.valor)
-                try{
-                    const del = await axios({
-                        url : `https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/saldos-iniciais-itens/305768/contas-correntes/SU5GT1JNQURPfDE0MDMyMzl8MTU4NDkw/itens/${it.id}`,
-                        method : 'delete',
-                        headers : headers
-                    })
-                }catch(e){
-                    console.log(`[ERRO] - Problema para excluir o conta corrente ${JSON.stringify(it)}`)
-                }
             }
         }catch(e){
             console.log(">>>>>>>>>>>>> ERROR <<<<<<<<<<<<<<");

@@ -1,11 +1,13 @@
 const axios = require('axios');
 const fontesDados = require("./js/fontes-dados")
-const fs= require('fs')
+const fs= require('fs');
+const { FORMERR } = require('dns');
 
 const parametros_execucao = {
-    "regex" : "TAG", // TITULO,TAG,CODIGO
+    "regex" : "NATUREZA", // TITULO,TAG,CODIGO,NATUREZA
     "tagId" : 17789,
-    "regexCodigo" : /movimentacaoBalanceteMensalDespesa/,
+    "natureza" : "TRANSPARENCIA_FLY",
+    "regexCodigo" : /gestoesBancarias/,
     "regexTitulo" : /SC-2020/
 }
 console.log(parametros_execucao);
@@ -59,6 +61,10 @@ function getConsultFontData(url) {
                                             console.log(aux.data.titulo)
                                             fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ').replace(':','-').substring(0,170)}.groovy` , aux.data.revisao.codigoFonte.toString())
                                             break;
+                                        case "NATUREZA":
+                                            console.log(aux.data.titulo)
+                                            fs.writeFileSync(__dirname + `/file-busca-artefatos/[${identificador}] - ${(aux.data.titulo.replace('/',' - ')).replace('/',' - ').replace(':','-').substring(0,170)}.groovy` , aux.data.revisao.codigoFonte.toString())
+                                            break;
                                         default:
                                             console.log("[ERRO] -> Não teve como cair nas condições do switch");
                                             break;
@@ -92,8 +98,8 @@ for(it of [
     "https://plataforma-scripts.betha.cloud/scripts/v1/api/fontes-dinamicas",
 ]){
     let newIt = it
+    let array = it.split('/')
     if(parametros_execucao.regex === "TAG"){
-        let array = it.split('/')
         newIt = []
         for(i of array){
             if(array[array.length -1] === "scripts"){
@@ -112,8 +118,26 @@ for(it of [
             }
         }
         newIt = newIt.join('/')
+    }else{
+        if(parametros_execucao.regex === "NATUREZA"){
+            newIt = [] 
+            if(array[array.length -1] === "scripts"){
+                for(i = 0 ; i < array.length ; i++){
+                    if(i === 5){
+                        newIt.push(array[i])
+                        newIt.push('naturezas')
+                        newIt.push(`${parametros_execucao.natureza}`)
+                    }else{
+                        newIt.push(array[i])
+                    }
+                }
+            }else{
+                continue;
+            }
+        }
+        newIt = newIt.join('/')
     }
-    console.log(newIt)
+    console.log(newIt);
     getConsultFontData(newIt)
         // .then(resp => Buffer.from(resp))
         .then(resp => console.log(resp))
