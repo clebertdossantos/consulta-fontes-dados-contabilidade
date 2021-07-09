@@ -17,8 +17,22 @@ exports.entidades = {
     "riodasflores" :  "lT5-F9TDP5s=",
     "mandirituba" : "1Smx2QtX7wQ=",
     "tabai" : "YyrOxAgSV2E=",
-    "diretoriadeprodutos" : "4Gy_TZ9cx154aA2WTMMXVl1QClJQDtk9IHxz3gwV4Co=",
-    "paranavai" : "9zgGkLh5RDvajqQby2qHJ0gMVu5s46eV"
+    "diretoriadeprodutos_contabil" : "4Gy_TZ9cx154aA2WTMMXVl1QClJQDtk9IHxz3gwV4Co=",
+    "diretoriadeprodutos_tesouraria" : "4Gy_TZ9cx16nK3iuZOrpOT_CPaR_GDO9iJXKz_-RaBE=",
+    "diretoriadeprodutos_planejamento" : "4Gy_TZ9cx154aA2WTMMXVl1QClJQDtk9IHxz3gwV4Co=",
+    "diretoriadeprodutos_prestacao_contas" : "4Gy_TZ9cx146Z4wUt2Nrij8F0K8vfdMUnbLvVm0pBQA=",
+    "paranavai" : "9zgGkLh5RDvajqQby2qHJ0gMVu5s46eV",
+    "extensoes_pr_prestacao_contas" : "xPmWzH2kQr_duE7Hk2YDJ0fvb3wdorxhkaZ4oaBWrls=",
+    "extensoes_pr_tesouraria" : "xPmWzH2kQr_HVdb-RFJFMQCxWE2-uFlUhDP-Gxys9s4=",
+    "extensoes_pr_contabil" : "xPmWzH2kQr_xHCFhe2dFF-ioB2HBUBV3jOU8nOBd0X8=",
+    "extensoes_sc_prestacao_contas" : "r3VeIlN8Nj7JEPiWSGn_DF-3uJl66Ds7MxLmaNwaKM4=",
+    "extensoes_ms_prestacao_contas" : "nneP-JHgmV7CytVZZQZtUFKIjVF9FA02pWpapQQI87I=",
+    "filial_chapeco_contabil" : "Zt-xVF4kZyy9Rpt2pJWu44smkLJ62EWeLW2e46akwa8=",
+    "filial_chapeco_tesouraria" : "Zt-xVF4kZyz1nkPTampqK8PJZr37kpOthW26SzVMheI=",
+    "filial_palhoca_contabil" : "vw9JT5g7R-KDFpfmtxPbvU9fahvmIg-TWFW52oi72Ck=",
+    "filial_palhoca_tesouraria" : "vw9JT5g7R-IVQaC0lzfBu0f3ZHpTS3ZdgoSx68RdEmg="
+
+
 }
 
 exports.Dados = {

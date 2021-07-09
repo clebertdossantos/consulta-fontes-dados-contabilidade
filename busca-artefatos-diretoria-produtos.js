@@ -1,13 +1,12 @@
 const axios = require('axios');
 const fontesDados = require("./js/fontes-dados")
 const fs= require('fs');
-const { FORMERR } = require('dns');
 
 const parametros_execucao = {
-    "regex" : "NATUREZA", // TITULO,TAG,CODIGO,NATUREZA
+    "regex" : "CODIGO", // TITULO,TAG,CODIGO,NATUREZA
     "tagId" : 17789,
     "natureza" : "TRANSPARENCIA_FLY",
-    "regexCodigo" : /gestoesBancarias/,
+    "regexCodigo" : /movimentacoes\.financeiras/,
     "regexTitulo" : /SC-2020/
 }
 console.log(parametros_execucao);
@@ -15,8 +14,9 @@ console.log(parametros_execucao);
 const headers = {
     //'app-context' : base64.encode(exercicio),
     'authorization' : fontesDados.tokenSuite,
-    'user-access': fontesDados.entidades.diretoriadeprodutos
+    'user-access': fontesDados.entidades.filial_palhoca_tesouraria
 }
+
 const parametros = {
     "limit" : 100, // podemos jogar uma paginação de até 10000
     "offset" : 0
@@ -26,7 +26,7 @@ const imprimir = (param) => `[${param.tipo}] -> ${param.url.split('/')[param.url
 
 function getConsultFontData(url) {
     return new Promise((resolve,reject) => {
-        for(pag of [100,200,300,400]){
+        for(pag of [100,200,300,400,500,600,700,800,900]){
             try{
                 parametros.limit = 100 
                 parametros.offset = (pag - 100)
@@ -96,6 +96,7 @@ for(it of [
     "https://plataforma-scripts.betha.cloud/scripts/v1/api/scripts",
     "https://plataforma-scripts.betha.cloud/scripts/v1/api/componentes",
     "https://plataforma-scripts.betha.cloud/scripts/v1/api/fontes-dinamicas",
+    "https://plataforma-scripts.betha.cloud/scripts/v1/api/criticas"
 ]){
     let newIt = it
     let array = it.split('/')
@@ -134,8 +135,8 @@ for(it of [
             }else{
                 continue;
             }
+            newIt = newIt.join('/')
         }
-        newIt = newIt.join('/')
     }
     console.log(newIt);
     getConsultFontData(newIt)

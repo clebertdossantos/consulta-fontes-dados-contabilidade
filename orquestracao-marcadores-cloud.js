@@ -79,9 +79,9 @@ const marcadoresProducao = [
 const URL_MARCADORES = "https://contabilidade.cloud.betha.com.br/contabilidade/api/marcadores" 
 
 const headers = {
-    'app-context': 'eyJleGVyY2ljaW8iOjIwMjB9',
-    'authorization': 'Bearer acfe3a58-fb15-4f1c-bf58-a157323f62e5',
-    'user-access': "Ss18tjAfRFM=",
+    'app-context': 'eyJleGVyY2ljaW8iOjIwMjF9',
+    'authorization': 'Bearer 225868f7-e468-4e19-9f4f-b07d4d48edec',
+    'user-access': "Ooga7HEBAlQ=",
     'content-type': 'application/json;charset=UTF-8'
 }
 

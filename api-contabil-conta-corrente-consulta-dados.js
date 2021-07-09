@@ -5,8 +5,8 @@ const fases = require('./js/fases-encerramento');
 
 const headers = {
     // 'authorization' : fontesDados.tokenSistemas,
-    'authorization' : 'Bearer 19f028a7-3d53-401d-9ad2-2d0324ccca62',
-    'user-access' : 't9vHkXAhUJZR6KHlAsTf0w==',
+    'authorization' : 'Bearer 4de8d564-4732-4a29-9213-a26d3948f900',
+    'user-access' : 'LY4bJMmkekTPtwaiQb2hRg==',
     'app-context': 'eyJleGVyY2ljaW8iOjIwMjF9'
 }
 const parametros = {
@@ -14,7 +14,7 @@ const parametros = {
     "offset" : 0
 }
 
-const API_CONTABIL = "https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/saldos-iniciais-itens/305768/contas-correntes/SU5GT1JNQURPfDE0MDMyMzh8MTU4NDg0/itens"
+const API_CONTABIL = "https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4959/lancamentos-abertura/TEFOQ0FNRU5UT19BQkVSVFVSQXwzMDg5Njk%3D/itens/16755/contas-correntes/SU5GT1JNQURPfDE0MTkwMzB8MTU4NDU1/itens"
 
 async function getConsultFontData(url) {
     //return new Promise((resolve,reject) => {

@@ -2,10 +2,11 @@ const axios = require('axios');
 const fontesDados = require("./js/fontes-dados")
 const fs= require('fs');
 const fases = require('./js/fases-encerramento');
+const base64 = require('base-64')
 
 const headers = {
     // 'authorization' : fontesDados.tokenSistemas,
-    'authorization' : 'Bearer 19f028a7-3d53-401d-9ad2-2d0324ccca62',
+    'authorization' : 'Bearer 3e73f0fc-fcb6-4e20-922b-dc26f0fd7250',
     'user-access' : 't9vHkXAhUJZR6KHlAsTf0w==',
     'app-context': 'eyJleGVyY2ljaW8iOjIwMjF9'
 }
@@ -14,7 +15,7 @@ const parametros = {
     "offset" : 0
 }
 
-const API_CONTABIL = "https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/saldos-iniciais-itens/305768/contas-correntes/SU5GT1JNQURPfDE0MDMyMzl8MTU4NDkw/itens"
+const API_CONTABIL = "https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/lancamentos-abertura/TEFOQ0FNRU5UT19BQkVSVFVSQXwzMDU4MDU%3D/itens/16578/contas-correntes/SU5GT1JNQURPfDE0MDg1NjJ8MTU4NDkw/itens"
 
 async function getConsultFontData(url) {
     //return new Promise((resolve,reject) => {
@@ -32,10 +33,11 @@ async function getConsultFontData(url) {
                 // console.log(it.contaContabil.mascara,' >> ',it.valor)
                 try{
                     const del = await axios({
-                        url : `https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/saldos-iniciais-itens/305768/contas-correntes/SU5GT1JNQURPfDE0MDMyMzl8MTU4NDkw/itens/${it.id}`,
+                        url : `https://esc-api-rest.cloud.betha.com.br/escrituracao/api/configuracoes-planos-contas/4950/lancamentos-abertura/TEFOQ0FNRU5UT19BQkVSVFVSQXwzMDU4MDU%3D/itens/16578/contas-correntes/SU5GT1JNQURPfDE0MDg1NjJ8MTU4NDkw/itens/${it.id}`,
                         method : 'delete',
                         headers : headers
                     })
+                    console.log(base64.decode(del.data.id))
                 }catch(e){
                     console.log(`[ERRO] - Problema para excluir o conta corrente ${JSON.stringify(it)}`)
                 }
@@ -70,3 +72,4 @@ async function getConsultFontData(url) {
 2223101980000000000
 
 */
+
