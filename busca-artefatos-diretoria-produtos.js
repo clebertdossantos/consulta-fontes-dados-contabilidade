@@ -14,7 +14,7 @@ console.log(parametros_execucao);
 const headers = {
     //'app-context' : base64.encode(exercicio),
     'authorization' : fontesDados.tokenSuite,
-    'user-access': fontesDados.entidades.filial_palhoca_tesouraria
+    'user-access': fontesDados.entidades.diretoriadeprodutos_contabil
 }
 
 const parametros = {

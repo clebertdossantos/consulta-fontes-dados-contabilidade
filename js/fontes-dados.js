@@ -31,8 +31,6 @@ exports.entidades = {
     "filial_chapeco_tesouraria" : "Zt-xVF4kZyz1nkPTampqK8PJZr37kpOthW26SzVMheI=",
     "filial_palhoca_contabil" : "vw9JT5g7R-KDFpfmtxPbvU9fahvmIg-TWFW52oi72Ck=",
     "filial_palhoca_tesouraria" : "vw9JT5g7R-IVQaC0lzfBu0f3ZHpTS3ZdgoSx68RdEmg="
-
-
 }
 
 exports.Dados = {
